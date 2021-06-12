@@ -29,13 +29,13 @@ export class BlogCdkLocalstackStack extends Stack {
     const updateReview = new NodejsFunction(this, "updateReviewFunction", {
       entry: `${lambdaPath}/update-review.ts`,
       handler: "handler",
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
     });
 
     const getReviews = new NodejsFunction(this, "readReviewFunction", {
       entry: `${lambdaPath}/get-reviews.ts`,
       handler: "handler",
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
     });
 
     dynamoTable.grantReadWriteData(updateReview);
